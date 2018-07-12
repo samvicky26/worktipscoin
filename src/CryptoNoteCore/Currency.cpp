@@ -108,18 +108,22 @@ bool Currency::generateGenesisBlock() {
   return true;
 }
 
-uint64_t Currency::emissionSpeedFactorByBlockVersion(uint8_t blockMajorVersion) const {
+unsigned int Currency::emissionSpeedFactorByBlockVersion(uint8_t blockMajorVersion) const {
   if (blockMajorVersion >= BLOCK_MAJOR_VERSION_5) {
-    return CryptoNote::parameters::EMISSION_SPEED_FACTOR_V2;
+	return m_emissionSpeedFactor;
   } else if (blockMajorVersion == BLOCK_MAJOR_VERSION_4) {
+    return CryptoNote::parameters::EMISSION_SPEED_FACTOR_V2;
+  } else {
     return CryptoNote::parameters::EMISSION_SPEED_FACTOR;
   }
 }
 
 uint64_t Currency::difficultyTargetByBlockVersion(uint8_t blockMajorVersion) const {
   if (blockMajorVersion >= BLOCK_MAJOR_VERSION_5) {
-    return CryptoNote::parameters::DIFFICULTY_TARGET_V2;
+	return m_difficultyTarget;
   } else if (blockMajorVersion == BLOCK_MAJOR_VERSION_4) {
+    return CryptoNote::parameters::DIFFICULTY_TARGET_V2;
+  } else {
     return CryptoNote::parameters::DIFFICULTY_TARGET;
   }
 }
