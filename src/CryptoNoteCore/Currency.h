@@ -45,7 +45,7 @@ public:
 
   uint64_t moneySupply() const { return m_moneySupply; }
   unsigned int emissionSpeedFactor() const { return m_emissionSpeedFactor; }
-  unsigned int emissionSpeedFactorByBlockVersion(uint8_t blockMajorVersion) const;
+  uint64_t emissionSpeedFactorByBlockVersion(uint8_t blockMajorVersion) const;
   uint64_t genesisBlockReward() const { return m_genesisBlockReward; }
 
   size_t rewardBlocksWindow() const { return m_rewardBlocksWindow; }
