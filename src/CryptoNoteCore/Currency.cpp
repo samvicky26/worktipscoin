@@ -652,9 +652,9 @@ bool Currency::checkProofOfWork(Crypto::cn_context& context, const CachedBlock& 
 }
 
 uint8_t Currency::getEmissionSpeedFactorByBlockMajorVersion(uint8_t blockMajorVersion) const {
-  uint8_t val = parameters::EMISSION_SPEED_FACTOR;
+  uint8_t val = CryptoNote::parameters::EMISSION_SPEED_FACTOR;
   if (blockMajorVersion >= BLOCK_MAJOR_VERSION_5) {
-      val = parameters::EMISSION_SPEED_FACTOR_V5;
+      val = CryptoNote::parameters::EMISSION_SPEED_FACTOR_V5;
   }
 
   if (val <= 0 || val > 8 * sizeof(uint64_t)) {
@@ -666,7 +666,7 @@ uint8_t Currency::getEmissionSpeedFactorByBlockMajorVersion(uint8_t blockMajorVe
 
 uint8_t Currency::getEmissionSmoothingFactorByBlockMajorVersion(uint8_t blockMajorVersion) const {
   if (blockMajorVersion >= BLOCK_MAJOR_VERSION_5) {
-    return parameters::EMISSION_SMOOTHING_FACTOR_V5;
+    return CryptoNote::parameters::EMISSION_SMOOTHING_FACTOR_V5;
   } else {
     throw std::invalid_argument("Cannot apply emission smoothing factor to block");
   }
