@@ -62,6 +62,17 @@ public:
   uint64_t defaultDustThreshold() const { return m_defaultDustThreshold; }
 
   uint64_t difficultyTarget() const { return m_difficultyTarget; }
+  uint64_t difficultyTarget(uint32_t blockMajorVersion) const
+  {
+      if (blockMajorVersion >= BLOCK_MAJOR_VERSION_5)
+      {
+          return CryptoNote::parameters::DIFFICULTY_TARGET_V2;
+      }
+      else
+      {
+          return m_difficultyTarget;
+      }
+  }
   size_t difficultyWindow() const { return m_difficultyWindow; }
 size_t difficultyWindowByBlockVersion(uint8_t blockMajorVersion) const;
   size_t difficultyLag() const { return m_difficultyLag; }
