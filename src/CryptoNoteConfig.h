@@ -30,7 +30,7 @@ const size_t ZAWY_DIFFICULTY_V2                              = 0;
 const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION       = 0;
 const unsigned EMISSION_SPEED_FACTOR                         = 18;
 const unsigned EMISSION_SPEED_FACTOR_V2                      = 20;
-const unsigned EMISSION_SMOOTHING_FACTOR_V5                  = 22;
+const unsigned EMISSION_SMOOTHING_FACTOR_V2                  = 22;
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(0);
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
