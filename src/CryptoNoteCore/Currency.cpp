@@ -174,6 +174,7 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   // Add smoothing component 
 	if (blockMajorVersion >= BLOCK_MAJOR_VERSION_5) {  
 	baseReward += (m_moneySupply - alreadyGeneratedCoins) >> getEmissionSmoothingFactorByBlockMajorVersion(blockMajorVersion); 
+	}
 
   size_t blockGrantedFullRewardZone = blockGrantedFullRewardZoneByBlockVersion(blockMajorVersion);
   medianSize = std::max(medianSize, blockGrantedFullRewardZone);
