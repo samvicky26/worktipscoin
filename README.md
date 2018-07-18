@@ -193,7 +193,7 @@ export CXXFLAGS="-std=gnu++11"
 ``
 
 - Make/Build
-
+,
 ``
 make
 ``
@@ -245,4 +245,4 @@ _Your binaries  will be located in `..\build\src\Release` folder._
 
 
 ### Credits
-Cryptonote Developers, Bytecoin Developers, Monero Developers, Forknote Project, TurtleCoin Developers
+Cryptonote Developers, Bytecoin Developers, Monero Developers, Forknote Project, TurtleCoin Developers, Worktips Developers.
