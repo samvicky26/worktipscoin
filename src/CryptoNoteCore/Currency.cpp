@@ -513,7 +513,7 @@ Difficulty Currency::nextDifficultyV4(std::vector<std::uint64_t> timestamps, std
 	
     for (int64_t i = 1; i <= N; i++)
     {  
-        ST = clamp(-6 * T, static_cast<int64_t>(timestamps[i]) - static_cast<int64_t>(timestamps[i-1]), 6 * T));
+        ST = clamp(-6 * T, static_cast<int64_t>(timestamps[i]) - static_cast<int64_t>(timestamps[i-1]), 6 * T);
 
         L +=  ST * i; 
 
